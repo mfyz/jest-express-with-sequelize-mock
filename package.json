@@ -1,0 +1,52 @@
+{
+ "name": "jest-express",
+ "version": "1.0.0",
+ "description": "Sample project exploring testing express controllers with Jest",
+ "main": "index.js",
+ "dependencies": {
+  "body-parser": "^1.19.0",
+  "cors": "^2.8.5",
+  "dotenv": "^8.2.0",
+  "esm": "^3.2.25",
+  "express": "^4.16.4",
+  "mysql": "^2.16.0",
+  "mysql2": "^1.6.5",
+  "sequelize": "^5.1.0"
+ },
+ "devDependencies": {
+  "@babel/core": "^7.7.2",
+  "babel-jest": "^24.9.0",
+  "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+  "jest": "^24.5.0",
+  "sequelize-mock": "^0.10.2",
+  "supertest": "^4.0.2"
+ },
+ "scripts": {
+  "start": "node index.js",
+  "dev": "nodemon index.js",
+  "test": "jest --coverage",
+  "test-watch": "jest --watchAll"
+ },
+ "jest": {
+  "verbose": true,
+  "testEnvironment": "node",
+  "transform": {
+   "^.+\\.js$": "babel-jest"
+  },
+  "transformIgnorePatterns": [
+   "<rootDir>/node_modules"
+  ],
+  "modulePaths": [
+   "<rootDir>"
+  ],
+  "globals": {
+   "NODE_ENV": "test"
+  },
+  "setupFiles": [
+   "dotenv/config"
+  ],
+  "coverageReporters": [
+   "text"
+  ]
+ }
+}
